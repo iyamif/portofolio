@@ -35,19 +35,20 @@ const App = () => {
   }, []);
 
   // Fungsi untuk scroll halus ke target ID
-  const scrollToSection = (e, id) => {
+  const scrollToSection = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
+  
     if (element) {
-      const offset = 80; // Sesuaikan dengan tinggi navbar
+      const offset = 80;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
       const offsetPosition = elementPosition - offset;
-
+  
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: "smooth"
       });
     }
   };
